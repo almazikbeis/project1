@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Speaking Evaluation</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/results.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IELTS Speaking Evaluation</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <label for="part">Select Part:</label>
+            <select id="part" name="part">
+                <option value="part1">Part 1</option>
+                <option value="part2">Part 2</option>
+                <option value="part3">Part 3</option>
+            </select>
+            <label for="file">Upload Audio File:</label>
+            <input type="file" id="file" name="file" accept="audio/wav" required>
+            <button type="submit">Analyze</button>
+        </form>
+        <div id="questions">
+            <h2>Questions</h2>
+            <ul id="questions-list"></ul>
+        </div>
+        <div id="results" style="display:none;">
+            <h2>Results</h2>
+            <div id="transcription"></div>
+            <div id="chart-container">
+                <div class="chart-item">
+                    <canvas id="fluencyChart"></canvas>
+                    <div id="fluency-feedback" class="feedback"></div>
+                </div>
+                <div class="chart-item">
+                    <canvas id="grammarChart"></canvas>
+                    <div id="grammar-feedback" class="feedback"></div>
+                </div>
+                <div class="chart-item">
+                    <canvas id="lexicalChart"></canvas>
+                    <div id="lexical-feedback" class="feedback"></div>
+                </div>
+                <div class="chart-item">
+                    <canvas id="pronunciationChart"></canvas>
+                    <div id="pronunciation-feedback" class="feedback"></div>
+                </div>
+                <div class="chart-item">
+                    <canvas id="overallChart"></canvas>
+                    <div id="overall-feedback" class="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>
